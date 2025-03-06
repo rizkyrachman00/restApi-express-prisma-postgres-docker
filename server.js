@@ -8,6 +8,9 @@ let data = {
   job: "job hunter",
 };
 
+// Middleware
+app.use(express.json());
+
 // server run in ...
 app.listen(PORT, () => {
   console.log(`Server running on port: ${PORT}`);
@@ -17,7 +20,15 @@ app.listen(PORT, () => {
 
 app.get("/", (req, res) => {
   console.log("Success, Hit this endpoint", req.method);
-  res.send("<h1>Halo Dunia</h1><input />"); // HTML Format
+
+  res.send(`
+    <body>
+      <h1>Data :</h1>
+      <p> ${JSON.stringify(data)} </p>
+    </body>
+    `);
+
+  // res.send("<h1>Halo Dunia</h1><input />"); // HTML Format
 
   // res.sendStatus(200).send("Halo Dunia"); // OK
   // res.sendStatus(201).send("Halo Dunia"); // Created
@@ -33,4 +44,10 @@ app.get("/dashboard", (req, res) => {
 app.get("/api/data", (req, res) => {
   console.log("Endpoint not visual");
   res.send(data);
+});
+
+app.post("/api/data", (req, res) => {
+  const newEntryData = req.body;
+  console.log(newEntryData);
+  res.sendStatus(201);
 });
