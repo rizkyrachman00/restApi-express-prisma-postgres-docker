@@ -4,6 +4,8 @@ GET http://localhost:5758
 ### Test GET "/dashboard" Website
 GET http://localhost:5758/dashboard
 
+
+
 ### Test Data Endpoint
 GET http://localhost:5758/api/data
 
@@ -15,3 +17,5 @@ Content-Type: application/json
   "name":"budi-json"
 }
 
+### Delete Array Data Endpoint
+DELETE http://localhost:5758/api/data
