@@ -1,0 +1,21 @@
+{
+  "name": "be-trial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rizkyrachman00/restApi-express-prisma-postgres-docker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rizkyrachman00/restApi-express-prisma-postgres-docker/issues"
+  },
+  "homepage": "https://github.com/rizkyrachman00/restApi-express-prisma-postgres-docker#readme"
+}
