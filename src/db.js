@@ -1,6 +1,6 @@
 import { DatabaseSync } from "node:sqlite";
 
-const db = new DatabaseSync(":memory");
+const db = new DatabaseSync(":memory:");
 
 // Execute SQL statements from strings
 db.exec(`
@@ -17,7 +17,7 @@ db.exec(`
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       user_id INTEGER,
       task TEXT,
-      completed BOOLEAN DFEAULT 0,
+      completed BOOLEAN DEFAULT 0,
       FOREIGN KEY(user_id) REFERENCES users(id)
   )
   
