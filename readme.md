@@ -10,3 +10,6 @@ nvm --help
 
 === Initialize Node Project ===
 npm init -y
+
+=== Initialize Prisma Schema ===
+npx prisma init
