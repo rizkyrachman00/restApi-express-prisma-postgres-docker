@@ -13,7 +13,16 @@ router.get("/", (req, res) => {
 });
 
 // Create a new todos
-router.post("/", (req, res) => {});
+router.post("/", (req, res) => {
+  const { task } = req.body;
+  const insertTodo = db.prepare(
+    `INSERT INTO todos (user_id,task) VALUES (?,?)`
+  );
+
+  const result = insertTodo.run(req.userId, task);
+
+  res.json({ id: result.lastInsertRowid, task, completed: 0 });
+});
 
 // Update a todos
 router.put("/:id", (req, res) => {});
