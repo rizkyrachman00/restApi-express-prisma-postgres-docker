@@ -25,7 +25,19 @@ router.post("/", (req, res) => {
 });
 
 // Update a todos
-router.put("/:id", (req, res) => {});
+router.put("/:id", (req, res) => {
+  const { completed } = req.body;
+  const { id } = req.params;
+  const { page } = req.query;
+
+  const updatedTodo = db.prepare(
+    "UPDATE todos SET completed = ? WHERE id = ?"
+  );
+
+  updatedTodo.run(completed, id);
+
+  res.json({ message: "Todo completed" });
+});
 
 // Delete a todos
 router.delete("/:id", (req, res) => {});

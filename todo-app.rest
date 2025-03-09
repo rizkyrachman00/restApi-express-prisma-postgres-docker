@@ -23,13 +23,22 @@ Content-Type: application/json
 
 ### Fetch all todos GET /todos (protected)
 GET http://localhost:5103/todos
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQxNDk0MjI5LCJleHAiOjE3NDE1ODA2Mjl9.sSXZKB5XdHuNKebjQ-FHBcKCHSH06O3rOCdqQBqlvUM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQxNDk2MTcxLCJleHAiOjE3NDE1ODI1NzF9.vg7Yv4cOeOdo-BvkdKyy9IDHOIphGovJWhlVCvvT7AU
 
 ### Create a new todo POST /todos (protected)
 POST http://localhost:5103/todos
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQxNDk0MjI5LCJleHAiOjE3NDE1ODA2Mjl9.sSXZKB5XdHuNKebjQ-FHBcKCHSH06O3rOCdqQBqlvUM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQxNDk2MTcxLCJleHAiOjE3NDE1ODI1NzF9.vg7Yv4cOeOdo-BvkdKyy9IDHOIphGovJWhlVCvvT7AU
 Content-Type: application/json
 
 {
   "task":"Finish BE Course"
+}
+
+### Update a todo PUT /todos/:id (protected)
+PUT http://localhost:5103/todos/2?page=4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQxNDk2MTcxLCJleHAiOjE3NDE1ODI1NzF9.vg7Yv4cOeOdo-BvkdKyy9IDHOIphGovJWhlVCvvT7AU
+Content-Type: application/json
+
+{
+  "completed": 1
 }
